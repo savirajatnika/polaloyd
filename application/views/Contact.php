@@ -1,69 +1,37 @@
-
-<!DOCTYPE html>
-<html>
-<title>About</title>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="<?php echo base_url()?>assets/css/w3.css">
-<link rel="stylesheet" href="<?php echo base_url()?>assets/bootstrap-assets/css/bootstrap.min.css">
-<link rel="stylesheet" href="<?php echo base_url()?>assets/bootstrap-assets/css/bootstrap-theme.min.css">
-<link rel="stylesheet" href="<?php echo base_url()?>assets/css/full-slider.css">
-<script src="<?php echo base_url()?>assets/bootstrap-assets/js/jquery.js"></script>
-<script src="<?php echo base_url()?>assets/bootstrap-assets/js/bootstrap.min.js"></script>
-<script src="<?php echo base_url()?>assets/bootstrap-assets/js/bootstrap.js"></script>
-<script src="<?php echo base_url()?>assets/bootstrap-assets/js/npm.js"></script>
-<script src="<?php echo base_url()?>assets/js/index.js"></script>
-<script src="<?php echo base_url()?>assets/js/jquery.easing.min.js"></script>
-<script src="<?php echo base_url()?>assets/js/custom.js"></script>
-
-<body>
-
-<style type="text/css">
-  @font-face {
-    font-family: myFirstFont;
-    src: url(<?php echo base_url()?>assets/fonts/ampera.ttf);
-}
-</style>
-
-<nav role="navigation" class="navbar navbar-default"> 
-        <!-- Brand and toggle get grouped for better mobile display -->
-        <!-- <div class="navbar-header"> -->
-            <button type="button" data-target="#navbarCollapse" data-toggle="collapse" class="navbar-toggle">
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-             <a href="<?php echo base_url(); ?>" class="navbar-brand" style="font-family: myFirstFont;">Fauzia Makeup</a>
-        </div>
-        <!-- Collection of nav links and other content for toggling -->
-        <div id="navbarCollapse" class="collapse navbar-collapse" style="float: right;">
-          <ul class="nav navbar-nav">
-            <li><a href="<?php echo 'about'; ?>" class="w3-bar-item w3-button">About</a> </li>
-            <li><a href="<?php echo 'catalog'; ?>" class="w3-bar-item w3-button">Catalog</a></li>
-            <li><a href="#Contact" class="w3-bar-item w3-button">Contact</a></li>
-          </ul>
-        </div>
-    </nav>
-</div>
-
+<!-- Page content -->
+<section id="contact" style="background-color: #2D302E" style="height: 0.8" >
+    <div class="w3-content" style="max-width:1000px">
 <!-- Contact Section -->
-  <div class="w3-container w3-padding-64" id="contact">
-    <h1>Contact</h1><br>
-    <p>We offer full-service catering for any event, large or small. We understand your needs and we will cater the food to satisfy the biggerst criteria of them all, both look and taste. Do not hesitate to contact us.</p>
-    <p class="w3-text-blue-grey w3-large"><b>Catering Service, 42nd Living St, 43043 New York, NY</b></p>
-    <p>You can also contact us by phone 00553123-2323 or email catering@catering.com, or you can send us a message here:</p>
-    <form action="/action_page.php" target="_blank">
-      <p><input class="w3-input w3-padding-16" type="text" placeholder="Name" required name="Name"></p>
-      <p><input class="w3-input w3-padding-16" type="number" placeholder="How many people" required name="People"></p>
-      <p><input class="w3-input w3-padding-16" type="datetime-local" placeholder="Date and time" required name="date" value="2017-11-16T20:00"></p>
-      <p><input class="w3-input w3-padding-16" type="text" placeholder="Message \ Special requirements" required name="Message"></p>
-      <p><button class="w3-button w3-light-grey w3-section" type="submit">SEND MESSAGE</button></p>
-    </form>
-  </div>
+      <div class="w3-container" style="background-color: #2D302E">
+        
+        <h1 style="font-family: Lato-Black;color: white; text-align: center; font-size: 35px; color: white;">Contact Us</h1><br>
+          <p style="font-family: Lato-Regular; font-size: 20px;text-align: center; color: white"> Sampaikan pertanyaan yang ingin anda sampaikan </p>
+          <p class="w3-text-blue-grey w3-large"></p>
+        
+    <?php echo form_open(site_url('My_Controller/create'));?>
+        <form method="POST" name="komentar">
+        <div class="col-sm-5 col-sm-offset-1">
+            <label style="color: white"> Nama</label>
+              <p><input class="w3-input w3-padding-10" type="text" placeholder="Ex: John" required name="Name"></p>
+            <label style="color: white"> Email</label>
+              <p><input class="w3-input w3-padding-10" type="text" placeholder="Ex: 1 orang" required name="People"></p>
+              <label style="color: white"> No. Telfon </label>
+                <p><input class="w3-input w3-padding-10" type="number" placeholder="Ex: 1 orang" required name="number"></p>
+              </div>
 
-  <footer class="w3-center w3-light-grey w3-padding-32">
-    <p>Powered by <a href="#" title="Female Wardrobe" target="_blank" class="w3-hover-text-green">5215100090</a></p>
-  </footer>
+          <div class="col-sm-5">
+              <label style="color: white"> Pesan</label>
+                <p><textarea class="w3-input w3-padding-10" type="text" placeholder="Masukkan pesan anda disini" required name="Message" rows="7"></textarea></p> 
+                <p style="text-align: center"><button type="submit" name="submit" value="Submit" class="btn btn-default">Send Message</button></p>
+              </div>
+        </form>
+    <!-- <div style="position: absolute; top: 100px; z-index: 1000; background-color: yellow;">
+      <?php echo $this->session->flashdata('sukses'); ?> -->
+      </div>
 
-</body>
-</html>
+
+
+
+    <!-- <?php echo $_SESSION['sukses'] ?> -->
+    </div>
+  </section>
