@@ -31,7 +31,12 @@ class My_Controller extends CI_Controller {
 		$data['data1'] = $this->My_Model->getDataSlider(); //['data1'] sesuaikan sama view
 		$data['data2'] = $this->My_Model->getDataGallery();
 		$data['data3'] = $this->My_Model->getDataTestimonials();
+		$this->load->view("template/header");
 		$this->load->view('Home', $data);
+		$this->load->view('About'); 
+		$this->load->view('gallery_home'); 
+		$this->load->view('Contact');
+		$this->load->view("template/Footer");
 
 	}
 
