@@ -40,21 +40,6 @@ class My_Controller extends CI_Controller {
 
 	}
 
-	public function about()
-	{
-		$this->load->view('About');
-	}
-
-	public function testimonial()
-	{
-		$this->load->view('Testimonial');
-	}
-
-	public function contact()
-	{
-		$this->load->view('Contact');
-	}
-
 	public function login()
 	{
 		if($this->session->userdata('isLogin')){
