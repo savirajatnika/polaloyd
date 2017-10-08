@@ -1,22 +1,4 @@
-<!DOCTYPE html>
-<html>
-<title>About</title>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="<?php echo base_url()?>assets/css/w3.css">
-<link rel="stylesheet" href="<?php echo base_url()?>assets/bootstrap-assets/css/bootstrap.min.css">
-<link rel="stylesheet" href="<?php echo base_url()?>assets/bootstrap-assets/css/bootstrap-theme.min.css">
-<link rel="stylesheet" href="<?php echo base_url()?>assets/css/full-slider.css">
-<script src="<?php echo base_url()?>assets/bootstrap-assets/js/jquery.js"></script>
-<script src="<?php echo base_url()?>assets/bootstrap-assets/js/bootstrap.min.js"></script>
-<script src="<?php echo base_url()?>assets/bootstrap-assets/js/bootstrap.js"></script>
-<script src="<?php echo base_url()?>assets/bootstrap-assets/js/npm.js"></script>
-<script src="<?php echo base_url()?>assets/js/index.js"></script>
-<script src="<?php echo base_url()?>assets/js/jquery.easing.min.js"></script>
-<script src="<?php echo base_url()?>assets/js/custom.js"></script>
-
 <body>
-
 <style type="text/css">
   @font-face {
     font-family: myFirstFont;
@@ -41,47 +23,20 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-
-      <a href="<?php echo base_url(); ?>" class="navbar-brand" style="font-family: myFirstFont;">Fauzia Makeup</a>
         
-        <!-- Collection of nav links and other content for toggling -->
-  <div id="navbarCollapse" class="collapse navbar-collapse" style="float: right;">
-    <ul class="nav navbar-nav">
-      <li><a href="#About" class="w3-bar-item w3-button">About</a> </li>
-      <li><a href="<?php echo 'catalog'; ?>" class="w3-bar-item w3-button">Ideas</a></li>
-      <li><a href="<?php echo 'contact'; ?>" class="w3-bar-item w3-button">Contact</a></li>
-    </ul>
-  </div>
-</nav>
-
 <!-- Page content --> 
-<div class="w3-content" style="max-width:1100px">
+<div class="w3-content" id="about" style="max-width:1600px; max-height: 800px;">
 
   <!-- About Section --> 
-  <div class="w3-row w3-padding-64" id="about">
-    <div class="w3-col m6 w3-padding-large">
-      <img class="img-responsive" id="borderimg2" alt="about" width="1024" height="766" style="display: block; margin: auto;" src="<?php echo base_url().'img/1.png'; ?>" >
+  <div class="w3-row w3-padding-64" style="background-color: #A2AAA6;">
+    <div align="center" class="w3-col m6">
+      <img class="img-responsive" alt="about" width="312" height="312" src="<?php echo base_url()?>img/100.jpg">
     </div>
-    <hr>
-    <div class="w3-col m6 w3-padding-large" id="borderimg2">
-      <h1 class="w3-center">About Us</h1><br>
-      <h4 class="w3-center"><strong>Since 2010</strong></h4>
-      <p class="w3-large" style="text-align: justify;">Fauzia Makeup melayani permintaan rias untuk segala event mulai dari:</p>
-      <ul class="w3-large" style="text-align: justify;">
-        <li>Arisan</li> 
-        <li>Wisuda</li>
-        <li>Pernikahan</li>
-        <li>Dan berbagai event lainnya</li> 
-      </ul>
-      <p class="w3-large" style="text-align: justify;">Fauzia Makeup berpusat di Gresik, tapi tetap menerima permintaan rias luar kota dalam lingkup Jawa Timur. Kepuasan pelanggan adalah acuan kami untuk terus berkembang.</p>
-      <!-- <p class="w3-large w3-text-grey w3-hide-medium">Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod temporincididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p> -->
-    </div>
+    <div align="center" class="w3-col m6 w3-padding-large">
+      <h1 class="w3-center" style="font-family: Raleway-Black; color: white; padding-right: 100px;">P O L A L O Y D</h1><br>
+      <h2 class="w3-center" style="font-family: Lato-Regular; color: white; padding-right: 100px;"><strong>Jasa cetak foto polaroid</strong></h2>
+      <p class="w3-large" style="text-align: justify; font-family: Lato-Regular; color: white; padding-right: 100px;">
+      Polaloyd menghadirkan cara baru untuk mencetak foto dan momen-momen favorit dalam hidupmu. Di Polaloyd, kamu bisa mengubah foto-fotomu menjadi produk cetakan yang menarik dan praktis. Produk cetakan ini berbentuk polaroid, photostrip, dan square photo.
+      <br>
   </div>
 </div>
-
-<footer class="w3-center w3-light-grey w3-padding-32">
-  <p>Powered by <a href="#" title="Fauzia Makeup" target="_blank" class="w3-hover-text-green">5215100090</a></p>
-</footer>
-
-</body>
-</html>
