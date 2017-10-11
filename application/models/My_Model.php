@@ -125,19 +125,19 @@ class My_Model extends CI_Model {
 
 
 
-  public function addDataTestimonials($data3) {
-    $this->db->insert('testimonials', $data3);
-  }
+  // public function addDataTestimonials($data3) {
+  //   $this->db->insert('testimonials', $data3);
+  // }
 
-  public function getDataTestimonials() {
-    $data3 = $this->db->select('*')->from('testimonials')->get();
-    return $data3->result_array();
-  }
+  // public function getDataTestimonials() {
+  //   $data3 = $this->db->select('*')->from('testimonials')->get();
+  //   return $data3->result_array();
+  // }
 
-  public function delete_item_testimonials($item){
-    $this->db->where_in('ID_testimonials', $item);
-    $this->db->delete('testimonials');
-  }
+  // public function delete_item_testimonials($item){
+  //   $this->db->where_in('ID_testimonials', $item);
+  //   $this->db->delete('testimonials');
+  // }
 
 
   
