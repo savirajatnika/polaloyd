@@ -30,14 +30,24 @@ class My_Controller extends CI_Controller {
 		$data['err_message'] = "";
 		$data['data1'] = $this->My_Model->getDataSlider(); //['data1'] sesuaikan sama view
 		$data['data2'] = $this->My_Model->getDataGallery();
-		$data['data3'] = $this->My_Model->getDataTestimonials();
-		$this->load->view("template/header");
+		// $data['data3'] = $this->My_Model->getDataTestimonials();
 		$this->load->view('Home', $data);
-		$this->load->view('About'); 
-		$this->load->view('gallery_home'); 
-		$this->load->view('Contact');
-		$this->load->view("template/Footer");
 
+	}
+
+	public function about()
+	{
+		$this->load->view('About');
+	}
+
+	public function testimonial()
+	{
+		$this->load->view('Testimonial');
+	}
+
+	public function contact()
+	{
+		$this->load->view('Contact');
 	}
 
 	public function login()
@@ -196,8 +206,7 @@ class My_Controller extends CI_Controller {
 	     $data = array(
 	            'Name' => $this->input->post('Name'),
 	            'Email' => $this->input->post('Email'),
-	            'People' => $this->input->post('People'),
-	            'Date' => $this->input->post('Date'),
+	            'No_Telp' => $this->input->post('No_Telp'),
 	            'Message' => $this->input->post('Message')            
 	                 
 	                );
