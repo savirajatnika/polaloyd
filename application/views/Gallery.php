@@ -37,7 +37,7 @@ th, td {
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="index.html" style="font-family: Ampera; font-size: 28px;">Fauzia Makeup</a>
+                <a class="navbar-brand" href="index.html" style="font-family: Lato-Black; font-size: 28px;">P O L A L O Y D</a>
             </div>
             <!-- Top Menu Items -->
             <ul class="nav navbar-right top-nav">
@@ -66,9 +66,6 @@ th, td {
                     <li class="active">
                         <a href="#"><i class="fa fa-lg fa-image"> Gallery</i></a>
                     </li>
-                    <li>
-                        <a href="<?php echo base_url()?>index.php/My_Controller/testimonials"><i class="fa fa-lg fa-thumbs-up"> Testimonials</i></a>
-                    </li>
 
                 </ul>
             </div>
@@ -95,9 +92,6 @@ th, td {
                             </li>
                             <li class="active">
                                 <a href="#"><i class="fa fa-lg fa-image"> Gallery</i></a>
-                            </li>
-                            <li>
-                                <a href="<?php echo base_url()?>index.php/My_Controller/testimonials"><i class="fa fa-lg fa-thumbs-up"> Testimonials</i></a>
                             </li>
                         </ol>
                     </div>

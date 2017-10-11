@@ -1,7 +1,7 @@
   <!DOCTYPE html>
 <html>
 <head>
-<title>Fauzia Makeup  </title>
+<title>P O L A L O Y D  </title>
 
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -10,7 +10,7 @@
 
 <link rel="stylesheet" href="<?php echo base_url()?>assets/css/w3.css">
 <link rel="stylesheet" href="<?php echo base_url()?>assets/bootstrap-assets/css/bootstrap.min.css">
-<link rel="stylesheet" href="<?php echo base_url()?>assets/bootstrap-assets/css/bootstrap-theme.min.css">
+<!-- <link rel="stylesheet" href="<?php echo base_url()?>assets/bootstrap-assets/css/bootstrap-theme.min.css"> -->
 <link rel="stylesheet" href="<?php echo base_url()?>assets/css/full-slider.css">
 
 
@@ -127,13 +127,6 @@ text-transform: none;
 
 <!--..................................................SLIDER..................................................-->
     <header id="home" class="carousel slide">
-        <!-- Indicators -->
-        <!-- <ol class="carousel-indicators">
-            <li data-target="#home" data-slide-to="0" class="active"></li>
-            <li data-target="#home" data-slide-to="1"></li>
-            <li data-target="#home" data-slide-to="2"></li>
-        </ol> -->
-
         <!-- Wrapper for Slides -->
         <div class="carousel-inner">
           <?php 
@@ -181,14 +174,6 @@ text-transform: none;
       <p class="w3-large" style="text-align: justify; font-family: Lato-Regular; color: white; padding-right: 100px;">
       Polaloyd menghadirkan cara baru untuk mencetak foto dan momen-momen favorit dalam hidupmu. Di Polaloyd, kamu bisa mengubah foto-fotomu menjadi produk cetakan yang menarik dan praktis. Produk cetakan ini berbentuk polaroid, photostrip, dan square photo.
       <br>
-      <!-- Fauzia Makeup melayani permintaan rias untuk segala event mulai dari:</p>
-      <ul class="w3-large" style="text-align: justify; list-style-image: url('<?php echo base_url()?>img/arrow.png');">
-        <li><span style="vertical-align: top;">Arisan</span></li> 
-        <li><span style="vertical-align: top;">Wisuda</span></li>
-        <li><span style="vertical-align: top;">Pernikahan</span></li>
-        <li><span style="vertical-align: top;">Dan berbagai event lainnya</span></li> 
-      </ul> -->
-      <!-- <p class="w3-large w3-text-grey w3-hide-medium">Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod temporincididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p> -->
     </div>
   </div>
 </div>
@@ -227,54 +212,6 @@ text-transform: none;
             </div>
         </div>   
     </section>         
-    
-<!--................................................TESTIMONIALS................................................-->
-
-  <!-- <div class="container" id="testimonial">    
-      <div class="row">
-        <div class="col-md-12 column">    
-          <h2 class="page-header" style="font-family: Raleway-Black; font-size: 35px;"><b>TESTIMONIALS</b><br><small style="font-family: Lato-Regular;">apa kata mereka?</small></h2>
-        
-        <div class="carousel slide" id="testimonials-rotate">
-
-        <div class="carousel-inner">
-        <?php 
-          $active = true;
-          // var_dump($data3);
-          foreach ($data3 as $a) { ?>
-            <div class="item 
-            <?php if($active){
-              echo 'active';
-              }else{
-                echo '';
-                } ?>"
-            style="border: solid 5px;"> 
-              <br> 
-              <div class="col-md-2" style="bottom: 10px;"><img alt="" src="<?php echo base_url(). $a['gambar_testimonials']; ?>" class="img-circle img-responsive"/></div>
-              <div class="testimonials col-md-10">
-
-                <h3 style="font-family: Georgia; color: black;">
-                  "<?php echo $a['caption_testimonials']; ?>" <br><br>
-                  <b><i>- <?php echo $a['nama_testimonials']; ?></i></b>
-                </h3>
-
-              </div>
-
-            <div class="clearfix"></div>
-            </div>
-
-        <?php $active=false;} ?> 
-        </div>
-        </div>
-
-        <div class="pull-right">
-          <a class="left" href="#testimonials-rotate" data-slide="prev"><span><img src="<?php echo base_url()?>img/left.png""></span></a>
-          <a class="right" href="#testimonials-rotate" data-slide="next"><span><img src="<?php echo base_url()?>img/right.png""></span></a>
-        <div class="clearfix"></div>  
-        </div>
-        </div>
-        </div>
-  </div><hr>  -->
 
 <!--..................................................CONTACT..................................................-->
 
@@ -290,37 +227,22 @@ text-transform: none;
         
     <?php echo form_open(site_url('My_Controller/create'));?>
         <form method="POST" name="komentar">
-          <div class="col-sm-5 col-sm-offset-1">
+        <div class="col-sm-5 col-sm-offset-1">
             <label style="font-family: Raleway-Medium; font-size: 18px;text-align: center; color: white">Nama</label>
               <p><input class="w3-input" type="text" placeholder="Ex: John" required name="Name" ></p>
             <label style="font-family: Raleway-Medium; font-size: 18px;text-align: center; color: white">Email</label>
-              <p><input class="w3-input" type="text" placeholder="Ex: John@gmail.com" required name="Email"></p>
-            <label style="font-family: Raleway-Medium; font-size: 18px;text-align: center; color: white">Nomor Telepon</label>
-              <p><input class="w3-input" type="text" placeholder="Ex: 081122223333" required name="number"></p>
-            <label style="font-family: Raleway-Medium; font-size: 18px;text-align: center; color: white">Date</label>
-              <p><input class="w3-input" type="text" placeholder="<?php
-                                                                    date_default_timezone_set("Asia/Jakarta");
-                                                                    echo "Ex: " . date("d/m/Y") ;
-                                                                  ?>" required name="Date"></p>
-
-          </div>
+              <p><input class="w3-input" type="text" placeholder="Ex: polaloyd@gmail.com" required name="Email"></p>
+              <label style="font-family: Raleway-Medium; font-size: 18px;text-align: center; color: white">Nomor Telepon</label>
+                <p><input class="w3-input" type="text" placeholder="Ex: 081122223333" required name="No_Telp"></p>
+              </div>
 
           <div class="col-sm-5">
-            <label style="font-family: Raleway-Medium; font-size: 18px;text-align: center; color: white"> Pesan</label>
-               <p><textarea class="w3-input" type="text" placeholder="Masukkan pesan anda disini" required name="Message" rows="10"></textarea></p> 
-               
-          </div>
-            <p style="color: white; font-family: Raleway-Medium;  margin-left:425px; width: 50px; text-align: center;"><br><button type="submit" name="submit" value="Submit" class="w3-button w3-amber">Send Message</button></p>
-
+              <label style="font-family: Raleway-Medium; font-size: 18px;text-align: center; color: white"> Pesan</label>
+                <p><textarea class="w3-input" type="text" placeholder="Masukkan pesan anda disini" required name="Message" rows="7"></textarea></p> 
+                <p style="color: white; font-family: Raleway-Medium; text-align: center;"><br><button type="submit" name="submit" value="Submit" class="w3-button w3-amber">Send Message</button></p>
+              </div>
         </form>
-
-    <!-- <div style="position: absolute; top: 100px; z-index: 1000; background-color: yellow;">
-      <?php echo $this->session->flashdata('sukses'); ?> -->
       </div>
-        
-
-
-    <!-- <?php echo $_SESSION['sukses'] ?> -->
     </div>
   </section>
 <!-- Footer -->
@@ -339,15 +261,8 @@ text-transform: none;
     <script src="<?php echo base_url()?>assets/bootstrap-assets/js/jquery.js"></script>
     <script src="<?php echo base_url()?>assets/bootstrap-assets/js/bootstrap.min.js"></script>
     <script src="<?php echo base_url()?>assets/bootstrap-assets/js/bootstrap.js"></script>
-    <script src="<?php echo base_url()?>assets/bootstrap-assets/js/npm.js"></script>
-    <script src="<?php echo base_url()?>assets/js/index.js"></script>
-    <script src="<?php echo base_url()?>assets/js/jquery.easing.min.js"></script>
-    <script src="<?php echo base_url()?>assets/js/custom.js"></script>
     <script src="<?php echo base_url()?>assets/gallery/vendor/jquery/jquery.min.js"></script>
     <script src="<?php echo base_url()?>assets/gallery/vendor/bootstrap/js/bootstrap.min.js"></script>
-
-
-
 
 </body>
 </html>

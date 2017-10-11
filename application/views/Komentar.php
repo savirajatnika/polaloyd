@@ -36,7 +36,7 @@ th, td {
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="index.html" style="font-family: Ampera; font-size: 28px;">Fauzia Makeup</a>
+                <a class="navbar-brand" href="index.html" style="font-family: Lato-Black; font-size: 28px;">P O L A L O Y D</a>
             </div>
             <!-- Top Menu Items -->
             <ul class="nav navbar-right top-nav">
@@ -65,9 +65,6 @@ th, td {
                     <li>
                         <a href="<?php echo base_url()?>index.php/My_Controller/gallery"><i class="fa fa-lg fa-image"> Gallery</i></a>
                     </li>
-                    <li>
-                        <a href="<?php echo base_url()?>index.php/My_Controller/testimonials"><i class="fa fa-lg fa-thumbs-up"> Testimonials</i></a>
-                    </li>
                 </ul>
             </div>
             <!-- /.navbar-collapse -->
@@ -94,9 +91,6 @@ th, td {
                             <li>
                                 <a href="<?php echo base_url()?>index.php/My_Controller/gallery"><i class="fa fa-lg fa-image"> Gallery</i></a>
                             </li>
-                            <li>
-                                <a href="<?php echo base_url()?>index.php/My_Controller/testimonials"><i class="fa fa-lg fa-thumbs-up"> Testimonials</i></a>
-                            </li>
                         </ol>
                     </div>
                 </div>
@@ -107,8 +101,7 @@ th, td {
                         <th style="text-align: center;">ID</th>  
                         <th style="text-align: center;">Nama</th>
                         <th style="text-align: center;">Email</th>
-                        <th style="text-align: center;">Jumlah orang</th>
-                        <th style="text-align: center;">Tanggal</th>
+                        <th style="text-align: center;">Nomor Telepon</th>
                         <th style="text-align: center;">Pesan</th>
                     </thead>
                     <form method="post" action="<?php echo base_url()?>index.php/My_Controller/delete_komentar"> <!-- delete banyak row -->
@@ -119,8 +112,7 @@ th, td {
                         <td><?php echo $x['ID_komentar']; ?></td>
                         <td><?php echo $x['Name']; ?></td>
                         <td><?php echo $x['Email']; ?></td>
-                        <td><?php echo $x['People']; ?></td>
-                        <td><?php echo $x['Date']; ?></td>
+                        <td><?php echo $x['No_Telp']; ?></td>
                         <td><?php echo $x['Message']; ?></td>
 
                         <td align="center">
