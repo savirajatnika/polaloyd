@@ -16,7 +16,7 @@ class Welcome_test extends TestCase
             $this->resetInstance();
             $this->CI->load->model('My_Model');
             $this->obj = $this->CI->My_Model;
-//            $this->form_validation = new CI_Form_validation();
+            $this->form_validation = new CI_Form_validation();
         }
         
         public function test_index()
@@ -29,48 +29,48 @@ class Welcome_test extends TestCase
         
         public function test_submit_masuk_nousername()
         {
-            $this->request('POST', 'My_Controller/login_admin',
+            $output = $this->request('POST', 'My_Controller/login_admin',
                 [
                     'username' => '',
                     'password' => '123'
                 ]);
-            $this->assertRedirect('My_Controller/login');
-            $this->assertFalse( isset($_SESSION['isLogin']) );
+            $this->assertContains('<title>Login Form</title>', $output);
+            $this->assertFalse( isset($_SESSION['username']) );
         }
-                
+        
         public function test_submit_masuk_nopassword()
         {
-            $this->request('POST', 'My_Controller/login_admin',
+            $output = $this->request('POST', 'My_Controller/login_admin',
                 [
                     'username' => 'admin',
                     'password' => ''
                 ]);
-            $this->assertRedirect('My_Controller/login');
-            $this->assertFalse( isset($_SESSION['isLogin']) );
+            $this->assertContains('<title>Login Form</title>', $output);
+            $this->assertFalse( isset($_SESSION['username']) );
         }
-//    
+    
         public function test_submit_masuk_unmatch()
         {
-            $this->request('POST', 'My_Controller/login_admin',
+            $output = $this->request('POST', 'My_Controller/login_admin',
                 [
                     'username' => 'admin',
                     'password' => '0000'
                 ]);
-            $this->assertRedirect('My_Controller/login');
-            $this->assertFalse( isset($_SESSION['isLogin']) );
+            $this->assertContains('<title>Login Form</title>', $output);
+            $this->assertFalse( isset($_SESSION['username']) );
         }
-//        
+        
         public function test_submit_masuk_blank()
         {
-            $this->request('POST', 'My_Controller/login_admin',
+            $output = $this->request('POST', 'My_Controller/login_admin',
                 [
                     'username' => '',
                     'password' => ''
                 ]);
-            $this->assertRedirect('My_Controller/login');
-            $this->assertFalse( isset($_SESSION['isLogin']) );
+            $this->assertContains('<title>Login Form</title>', $output);
+            $this->assertFalse( isset($_SESSION['username']) );
         }
-//        
+        
         public function test_submit_masuk()
         {
             $this->request('POST', 'My_Controller/login_admin',
@@ -81,13 +81,14 @@ class Welcome_test extends TestCase
             $this->assertRedirect('My_Controller/komentar');
             $this->assertEquals('admin', $_SESSION['username']);
         }
-//        
+        
         public function test_keluar()
         {
             $_SESSION['username'] = "admin";
             $this->request('GET', 'My_Controller/logout');                                                      
             $this->assertRedirect('My_Controller/login');  
         }
+        
         
         
         // B U K A  H A L A M A N //
