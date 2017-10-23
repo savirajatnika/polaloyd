@@ -92,69 +92,36 @@ class Welcome_test extends TestCase
         
         
         // B U K A  H A L A M A N //
-       
+        
         public function test_halamanloginadmin()
         {
-            $_SESSION['isLogin'] != "isLogin";
-            $output = $this->request('GET', 'My_Controller/login');
-            $this->assertContains(' <title>Login Form</title>', $output);
-	}
-        
-        public function test_halamanloginadmin_sudahlogin()
-        {
-            $_SESSION['isLogin'] = "isLogin";
-            $output = $this->request('GET', 'My_Controller/login');
+            $_SESSION['username'] = "admin";
+            $this->request('GET', 'My_Controller/login');
             $this->assertRedirect('My_Controller/admin');
 	}
-//        
+        
+        public function test_halamanloginadmin_fail()
+        {
+            $output = $this->request('GET', 'My_Controller/login');
+            $this->assertContains('<title>Login Form</title>', $output);
+	}
+        
+        public function test_halamanloginadmin_else()
+        {
+            $_SESSION['isLogin'] = false;
+            $output = $this->request('GET', 'My_Controller/login_admin');
+            $this->assertContains("<script> alert('Username atau Password yang anda masukkan salah!') </script>", $output);
+	}
+        
         public function test_halamanHome()
         {
             $output = $this->request('GET', 'My_Controller/index');
             $this->assertContains('<title>P O L A L O Y D  </title>', $output);
-	}   
-//        
-        public function test_halamanGantipassword()
-        {
-            $output = $this->request('GET', 'My_Controller/changepass');
-            $this->assertContains('<title>CHANGE PASS</title>', $output);
-        }
-        
-// 
-        public function test_halamanGallery()
-        {
-            $_SESSION['isLogin'] = "isLogin";
-            
-            $output = $this->request('GET', 'My_Controller/gallery');                                                      
-            $this->assertRedirect('My_Controller/readDataGallery', $output);  
-	}  
-//        
-        public function test_halamanGallery_fail()
-        {
-            $_SESSION['isLogin'] != "isLogin";
-            
-            $output = $this->request('GET', 'My_Controller/gallery');                                                      
-            $this->assertRedirect('My_Controller/login', $output);  
-	}   
-        
-        public function test_halamanSlider()
-        {
-            $_SESSION['isLogin'] = "isLogin";
-            
-            $output = $this->request('GET', 'My_Controller/slider');                                                      
-            $this->assertRedirect('My_Controller/readDataSlider', $output);  
-	}  
-//        
-        public function test_halamanSlider_fail()
-        {
-            $_SESSION['isLogin'] != "isLogin";
-            
-            $output = $this->request('GET', 'My_Controller/slider');                                                      
-            $this->assertRedirect('My_Controller/login', $output);  
 	}
-//        
+        
         public function test_halamanKomentar()
         {
-            $_SESSION['isLogin'] = "isLogin";
+            $_SESSION['username'] = "admin";
             
             $output = $this->request('GET', 'My_Controller/komentar');                                                      
             $this->assertRedirect('My_Controller/readDataKomentar', $output);  
@@ -162,30 +129,17 @@ class Welcome_test extends TestCase
         
         public function test_halamanKomentar_fail()
         {
-            $_SESSION['isLogin'] != "isLogin";
+//            $_SESSION['username'] != "admin";
             
             $output = $this->request('GET', 'My_Controller/komentar');                                                      
             $this->assertRedirect('My_Controller/login', $output);  
 	}
-//        
-        public function test_halamanChangepass()
-        {
-            $_SESSION['isLogin'] = "isLogin";
-            
-            $output = $this->request('POST', 'My_Controller/admin');                                                      
-            $this->assertRedirect('My_Controller/changepass', $output);  
-	}  
-//        
-        public function test_halamanChangepass_fail()
-        {
-            $_SESSION['isLogin'] != "isLogin";
-            
-            $output = $this->request('POST', 'My_Controller/admin');                                                      
-            $this->assertRedirect('My_Controller/login', $output);  
-	}
-                  
-//        // R E A D  D A T A //      
-        public function test_ModelhalamanKomentar()
+        
+        
+           
+        // R E A D  D A T A //
+        
+        public function test_modelHalamanKomentar()
         {
             $_SESSION['username'] = "admin";
             
@@ -193,101 +147,39 @@ class Welcome_test extends TestCase
             $this->assertContains('<title>KOMENTAR</title>', $output);  
 	}  
         
-        public function test_ModelhalamanSlider()
-        {
+        public function test_controllerAdmin()
+	{
             $_SESSION['username'] = "admin";
-            
-            $output = $this->request('GET', 'My_Controller/readDataSlider');                                                      
-            $this->assertContains('<title>SLIDER</title>', $output);  
-	}  
-        
-        public function test_ModelhalamanGallery()
-        {
-            $_SESSION['username'] = "admin";
-            
-            $output = $this->request('GET', 'My_Controller/readDataGallery');                                                      
-            $this->assertContains('<title>GALLERY</title>', $output);  
-	}  
-//        
-//        // C R E A T E  D A T A //
-//        
-        public function test_create()
-        {
-            $_SESSION['isLogin'] = "isLogin";
-            $start = $this->obj->getCurrentRow();
-            $output = $this->request('POST', 'My_Controller/create',
-                    [
-                    'Name' => 'tes',
-	            'Email' => '12345673@gmail.com',
-	            'No_Telp' => '088812349876',
-	            'Message' => 'coba'   
-                    ]);
-            $finish = $this->obj->getCurrentRow();
-            $expected = $finish - $start;
-            $this->assertEquals(1,$expected);
-            
-        }
-        
-        // TEST DELETE //
-        
-        public function testdelete(){
-                $_SESSION['username'] = "admin";
-		$mula = $this->obj->getCurrentRow();
-		$id = 11;
-		$result = $this->obj->getDataKomentar('aedfaf');
-		foreach ($result as $x){
-			$ID = $x['komentar'];
-		}
-		$url = 'My_Controller/deletekomentar/'.$ID;
-		$output = $this->request('GET', $url);
-		$akhir = $this->obj->getCurrentRow();
-	    $expected = $mula - $akhir;
-	    $this->assertEquals(1, $expected);
+            $this->request('GET', 'My_Controller/admin');
+            $this->assertRedirect('My_Controller/komentar');
 	}
         
-        // M O D E L  A D D  D A T A //
+        public function test_controllerAdmin_fail()
+	{
+            $this->request('GET', 'My_Controller/admin');
+            $this->assertRedirect('My_Controller/login');
+	}
         
-//        public function test_modelKomentar()
-//        {
-//            $start = $this->CI->db->count_all_results('komentar');
-//            $data = array(
-//                    'Name' => 'contohhh',
-//	            'Email' => '123@gmail.com',
-//	            'No_Telp' => '088812349876',
-//	            'Message' => 'testttttt'    
-//                    );
-//            $this->obj->addDataKomentar($data);
-//            $finish = $this->CI->db->count_all_results('komentar');
-//            $expected = $finish - $start;
-//            $this->assertEquals(1,$expected);
-//        }
-//        
-//        public function test_modelSlider()
-//        {
-//            $start = $this->CI->db->count_all_results('slider');
-//            $data = array(
-//                    'caption_slider' => 'test caption',
-//	            'gambar_slider' => 'none'
-//                    );
-//            $this->obj->addDataSlider($data);
-//            $finish = $this->CI->db->count_all_results('slider');
-//            $expected = $finish - $start;
-//            $this->assertEquals(1,$expected);
-//        }
-//        
-//        public function test_modelGallery()
-//        {
-//            $start = $this->CI->db->count_all_results('gallery');
-//            $data = array(
-//                    'caption_gallery' => 'test caption gallery',
-//	            'occasion_gallery' => 'occasion',
-//	            'gambar_gallery' => 'none',
-//	            'keterangan_gallery' => 'keterangannnn'
-//                    );
-//            $this->obj->addDataGallery($data);
-//            $finish = $this->CI->db->count_all_results('gallery');
-//            $expected = $finish - $start;
-//            $this->assertEquals(1,$expected);
-//        }
+        // C R E A T E  D A T A //
         
-}
+        public function test_create()
+        {
+            $this->request('POST', 'My_Controller/create', [
+                'Name' => 'ajahdjaba',
+	        'Email' => 'bdaafac',
+	        'No_Telp' => 'cadacaca',
+	        'Message' => 'ddadacacacavaaafafafafafaaababafnjayda'  
+            ]);
+            $this->assertRedirect('/');
+        }
+        
+        public function test_create_gagal()
+        {
+            $output = $this->request('POST', 'My_Controller/create', [
+                'Name' => '',
+	        'Email' => '',
+	        'No_Telp' => 'c',
+	        'Message' => ''  
+            ]);
+            $this->assertEquals('Format input salah!', $output);
+        }
