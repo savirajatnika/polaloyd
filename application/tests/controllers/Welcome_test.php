@@ -89,8 +89,6 @@ class Welcome_test extends TestCase
             $this->assertRedirect('My_Controller/login');  
         }
         
-        
-        
         // B U K A  H A L A M A N //
         
         public function test_halamanloginadmin()
@@ -183,3 +181,35 @@ class Welcome_test extends TestCase
             ]);
             $this->assertEquals('Format input salah!', $output);
         }
+        
+        // M O D E L  A D D  D A T A //
+        
+        public function test_modelKomentar()
+        {
+            $start = $this->CI->db->count_all_results('komentar');
+            $data = array(
+                    'Name' => 'contohhh',
+	            'Email' => '123@gmail.com',
+	            'No_Telp' => '088812349876',
+	            'Message' => 'testttttt'    
+                    );
+            $this->obj->addDataKomentar($data);
+            $finish = $this->CI->db->count_all_results('komentar');
+            $expected = $finish - $start;
+            $this->assertEquals(1,$expected);
+        }
+        
+        // D E L E T E  D A T A //
+        function test_deletesss(){
+            $_SESSION['username'] = 'admin';
+            $this->request('GET', 'My_Controller/delete_komentar', [
+                'komentar'=>'65'
+            ]);
+            $this->assertRedirect('My_Controller/readDataKomentar');
+        }
+        function test_deleteeeeee(){
+            $_SESSION['username'] = 'admin';
+            $this->request('GET', 'My_Controller/deletekomentar/49');
+            $this->assertRedirect('My_Controller/readDataKomentar');
+        }
+}
