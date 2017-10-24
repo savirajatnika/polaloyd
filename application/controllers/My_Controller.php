@@ -22,8 +22,7 @@ class My_Controller extends CI_Controller {
 	public function __construct() {
 		parent::__construct();
 		$this->load->model('My_Model');
-		$this->load->library('encryption');
-
+                //$this->load->library('encryption');
 	}
 
 	public function index()
@@ -47,7 +46,7 @@ class My_Controller extends CI_Controller {
 
 	public function logout()
 	{
-		if($this->session->userdata('username'))
+//		if($this->session->userdata('username'))
 		{
 			$this->session->sess_destroy();
                 redirect('My_Controller/login');}}
@@ -78,10 +77,11 @@ class My_Controller extends CI_Controller {
 	public function login_admin(){
 	    $username = $this->input->post('username');
 	    $password = $this->input->post('password');
-	    $isLogin = $this->My_Model->loginadmin($username, $password);
+            $sha1 = sha1($password);
+	    $isLogin = $this->My_Model->loginadmin($username, $sha1);
 	    $userpass = array(
-	    	'username' => sha1($username),
-	    	'password' => sha1($password)
+	    	'username' => $username,
+	    	'password' => $sha1
 	    	);    
 
 	    if($isLogin==true){
@@ -93,14 +93,14 @@ class My_Controller extends CI_Controller {
 		    	redirect('My_Controller/komentar');
 	    	}
     	
-    	}else{
-	  		echo "<script> alert('Username atau Password yang anda masukkan salah!') </script>";
-	  		$this->load->view('Login');
+            }else{
+                echo "<script> alert('Username atau Password yang anda masukkan salah!') </script>";
+	  	$this->load->view('Login');
 		}
 	}
 	
 	public function readDataKomentar() {
-	    $data = $this->My_Model->getDataKomentar(); //kalo $data undefined = grgr ini blm di panggil
+	    //$data = $this->My_Model->getDataKomentar(); 
 	    $this->load->view('Komentar', array('data' => $data));
   	}
 
@@ -127,15 +127,8 @@ class My_Controller extends CI_Controller {
         }
 
   public function deletekomentar($ID){ //delete 1 komentar
-    $where = array('ID_komentar' => $ID);
     $res = $this->My_Model->delete_item_komentar($ID);
     redirect('My_Controller/readDataKomentar');}
-  
-
-  public function delete_komentar(){ //delete banyak komentar
-    $item = $this->input->post('komentar');
-    $this->My_Model->delete_item_komentar($item);
-    redirect('My_Controller/readDataKomentar'); }
   
 }
 ?>
