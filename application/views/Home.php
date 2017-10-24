@@ -1,7 +1,7 @@
   <!DOCTYPE html>
 <html>
 <head>
-<title>P O L A L O Y D </title>
+<title>P O L A L O Y D  </title>
 
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -231,11 +231,11 @@ text-transform: none;
         <form method="POST" name="komentar">
         <div class="col-sm-5 col-sm-offset-1">
             <label class="plydcontactisi">Nama</label>
-              <p><input class="w3-input" type="text" placeholder="Ex: John" required name="Name" required="required" ></p>
+              <p><input class="w3-input" type="text" placeholder="Ex: John" required name="Name" ></p>
             <label class="plydcontactisi">Email</label>
-              <p><input class="w3-input" type="Email" placeholder="Ex: polaloyd@gmail.com" required name="Email" required="required"></p>
+              <p><input class="w3-input" type="email" placeholder="Ex: polaloyd@gmail.com" required name="Email"></p>
               <label class="plydcontactisi">Nomor Telepon</label>
-                <p><input class="w3-input" type="Number" placeholder="Ex: 081122223333" required name="No_Telp" required="required"></p>
+                <p><input class="w3-input" type="text" placeholder="Ex: 081122223333" required name="No_Telp"></p>
               </div>
 
           <div class="col-sm-5">
