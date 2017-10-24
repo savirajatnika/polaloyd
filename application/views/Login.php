@@ -10,7 +10,6 @@
   
 </head>
 
-<body>
   <body>
   <div class="login">
     <div class="login-screen">
@@ -36,6 +35,4 @@
   </div>
 </body>
   
-  
-</body>
 </html>
